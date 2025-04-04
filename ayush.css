@@ -1,0 +1,453 @@
+/* --- Basic Reset & General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff; /* Default background for index and explore */
+}
+
+/* --- Navigation Bar --- */
+.nav-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.nav-main-ele {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.35rem;
+    font-weight: bold;
+    color: #1a4d2e;
+    text-decoration: none;
+}
+.nav-ele-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1; /* Allow div to take remaining space */
+    margin-left: 20px; /* Add some space from the main title */
+}
+.nav-ele {
+    text-decoration: none;
+    margin: 8px 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-ele:hover { color: #0b8a4f; }
+
+/* --- Hero Section (index.html) --- */
+.home-page {
+    background-image: url('https://glamourgarden.com/wp-content/uploads/2023/08/Bonsai.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+.hero-text {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    max-width: 85%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.hero-text h1 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.hero-text p {
+  color: #f0f0f0;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.explore-btn {
+    background-color: #17a760;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 10px;
+    border-radius: 25px;
+    height: auto;
+    width: auto;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.explore-btn:hover {
+    background-color: #128a4f;
+    transform: scale(1.05);
+}
+
+/* --- Styles for Pages with Background Theme (about, contact, PLANT DETAIL PAGES) --- */
+body.bg-page {
+    background-image: url('https://glamourgarden.com/wp-content/uploads/2023/08/Bonsai.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex; /* Helps center content block */
+    flex-direction: column;
+    align-items: center; /* Center content block horizontally */
+    padding-top: 80px; /* Base offset for fixed nav */
+    padding-bottom: 40px; /* Bottom padding */
+}
+
+/* Main content container style for bg-pages (about, contact, plant-details) */
+.bg-page .page-content {
+    background-color: rgba(255, 255, 255, 0.88); /* Semi-transparent background */
+    color: #333;
+    padding: 35px 45px;
+    border-radius: 10px;
+    max-width: 950px; /* Standard max-width for these */
+    width: 90%; /* Responsive width */
+    margin-top: 30px; /* Spacing below nav */
+    margin-bottom: 40px; /* Spacing at bottom */
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+
+/* General content styling within bg-pages */
+.bg-page .page-content h2,
+.bg-page .page-content .plant-title { /* Use a class for plant title H1 */
+    font-size: 2rem;
+    color: #1a4d2e;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* Optional separator */
+    padding-bottom: 10px;
+}
+.bg-page .page-content h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee; /* Lighter separator for H3 */
+    padding-bottom: 5px;
+}
+.bg-page .page-content p { /* Applies to regular paragraphs */
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+.bg-page .page-content ul { /* Style lists (e.g., on about page) */
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 18px;
+    padding-left: 5px; /* Add slight padding */
+}
+.bg-page .page-content li {
+    margin-bottom: 8px;
+    color: #444;
+}
+.bg-page .page-content a { /* Standard links */
+    color: #17a760;
+    text-decoration: none;
+    font-weight: 500;
+}
+.bg-page .page-content a:hover { text-decoration: underline; }
+
+/* Contact info block specific styles (contact.html) */
+.bg-page .page-content .contact-info {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: rgba(240, 244, 240, 0.95);
+    border: 1px solid #d4e0d4;
+    border-radius: 8px;
+    text-align: center;
+}
+.bg-page .page-content .contact-info p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+    color: #333;
+}
+.bg-page .page-content .contact-info p strong {
+    margin-right: 8px;
+    color: #1a4d2e;
+}
+
+/* --- Styles specific to Plant Detail Pages (within bg-page theme) --- */
+
+/* Image Scroll Container */
+.bg-page .page-content .plant-image-scroll { /* Renamed from alo-image-scroll */
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px; /* Slightly reduced gap */
+    padding: 15px;
+    margin: 0 auto 30px auto; /* Center and add bottom margin */
+    max-width: 100%; /* Use container width */
+    border-radius: 8px; /* Consistent rounding */
+    background-color: rgba(230, 255, 238, 0.6); /* Subtle background */
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.05);
+}
+
+/* Scroll Images */
+.bg-page .page-content .plant-scroll-img { /* Renamed from alo-scroll-img */
+    flex: 0 0 auto;
+    width: 260px; /* Adjusted size */
+    height: 190px; /* Adjusted size */
+    object-fit: cover;
+    border-radius: 6px;
+    scroll-snap-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    cursor: grab;
+}
+.bg-page .page-content .plant-scroll-img:active { cursor: grabbing; }
+.bg-page .page-content .plant-scroll-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* Hide scroll bar */
+.bg-page .page-content .plant-image-scroll::-webkit-scrollbar { display: none; }
+.bg-page .page-content .plant-image-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Text blocks on Plant Detail Pages */
+.bg-page .page-content .plant-info-block { /* Renamed from alo-main-quest */
+    font-size: 1rem;
+    margin: 20px 0; /* Vertical margin */
+    line-height: 1.7;
+    background-color: rgba(255, 255, 255, 0.6); /* More subtle background */
+    padding: 18px 25px; /* Adjusted padding */
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+    text-align: left;
+    color: #444;
+    transition: box-shadow 0.3s ease;
+}
+.bg-page .page-content .plant-info-block strong {
+    color: #1a4d2e; /* Main heading color */
+    font-weight: 600;
+}
+.bg-page .page-content .plant-info-block:hover {
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.09);
+}
+
+/* Back Button Styling */
+.back-link {
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    color: #1a4d2e;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #1a4d2e;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.back-link:hover {
+    background-color: #1a4d2e;
+    color: #ffffff;
+}
+
+
+/* --- Styles for Explore Page (explore.html - White Background) --- */
+/* Base styles using .page-content, applied to explore.html's <main> */
+/* NOTE: .page-content styles defined earlier apply here too (padding, max-width, etc.) */
+/* Ensure explore page body doesn't inherit background */
+body:not(.bg-page) {
+    background-color: #ffffff;
+}
+
+/* Heading style for explore.html */
+.explore-page h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2.2rem;
+    color: #1a4d2e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* Intro text style for explore.html */
+.explore-page .intro-text {
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+/* Plant Gallery & Cards (explore.html) */
+.plant-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+}
+.plant-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+}
+.plant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+.plant-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    display: block;
+}
+.plant-card h4 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #1a4d2e;
+    font-weight: 600;
+    min-height: 2.4em; /* Ensure space for 2 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plant-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 15px;
+}
+/* Know More Button Styling (explore.html) */
+.know-more-btn {
+    background-color: #f0f0f0;
+    color: #1a4d2e;
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    margin-top: auto; /* Push button to bottom */
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    align-self: center;
+}
+.know-more-btn:hover {
+    background-color: #e0e0e0;
+    color: #0b8a4f;
+    border-color: #aaa;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) { /* Medium screens */
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text p { font-size: 1.05rem; }
+    .bg-page .page-content { width: 85%; max-width: 800px; } /* Includes plant details now */
+    .plant-card { width: calc(33.333% - 20px); } /* Explore page */
+    .bg-page .page-content .plant-scroll-img { width: 240px; height: 170px; }
+}
+
+@media (max-width: 768px) { /* Small screens */
+    .nav-div { flex-direction: column; align-items: flex-start; padding: 10px 15px; }
+    .nav-main-ele { margin-bottom: 5px; }
+    .nav-ele-div { width: 100%; justify-content: flex-start; padding-top: 5px; margin-left: 0; }
+    .nav-ele { margin: 6px 10px 6px 0; }
+
+    .hero-text { max-width: 90%; padding: 25px 30px; }
+    .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 1rem; }
+
+    body.bg-page { padding-top: 100px; } /* Increase offset for stacked nav */
+    .bg-page .page-content { width: 90%; padding: 25px 30px; margin-top: 30px; margin-bottom: 30px; }
+    .bg-page .page-content h2, .bg-page .page-content .plant-title { font-size: 1.8rem; }
+    .bg-page .page-content h3 { font-size: 1.4rem; }
+    .bg-page .page-content p, .bg-page .page-content .plant-info-block { font-size: 0.95rem; }
+    .bg-page .page-content ul { margin-left: 20px; }
+
+    /* Adjust main content padding on explore page for stacked nav */
+    .page-content:not(.bg-page main.page-content) { padding-top: 100px; } /* Target explore specifically */
+    .explore-page h2 { font-size: 1.8rem; }
+    .explore-page .intro-text { font-size: 1rem; }
+
+    .plant-card { width: calc(50% - 20px); } /* Explore page */
+    .bg-page .page-content .plant-scroll-img { width: 220px; height: 160px; }
+    .bg-page .page-content .plant-info-block { padding: 15px 20px; }
+    .back-link { padding: 8px 16px; font-size: 0.9rem; }
+}
+
+@media (max-width: 576px) { /* Extra small screens */
+    .hero-text { padding: 20px 25px; }
+    .hero-text h1 { font-size: 1.7rem; }
+    .hero-text p { font-size: 0.95rem; }
+    .explore-btn { padding: 10px 20px; font-size: 0.9rem; }
+
+    .nav-main-ele { font-size: 1.2rem; }
+    .nav-ele { font-size: 0.95rem; margin: 5px 8px 5px 0; }
+
+    body.bg-page { padding-top: 90px; /* Adjust if nav height changes */ }
+    .bg-page .page-content { width: 95%; padding: 20px 25px; margin-top: 20px; margin-bottom: 20px; }
+    .bg-page .page-content h2, .bg-page .page-content .plant-title { font-size: 1.6rem; }
+    .bg-page .page-content h3 { font-size: 1.3rem; }
+    .bg-page .page-content p, .bg-page .page-content .plant-info-block { font-size: 0.9rem; }
+    .bg-page .page-content .contact-info { padding: 15px; }
+    .bg-page .page-content .contact-info p { font-size: 1rem; }
+
+    /* Adjust main content padding on explore page too */
+    .page-content:not(.bg-page main.page-content) { padding-top: 90px; }
+    .explore-page h2 { font-size: 1.6rem; }
+    .explore-page .intro-text { font-size: 0.95rem; }
+
+    .plant-gallery { gap: 20px; } /* Explore page */
+    .plant-card { width: calc(100% - 20px); max-width: 320px; } /* Explore page */
+    .know-more-btn { font-size: 0.85rem; padding: 7px 14px; } /* Explore page */
+
+    .bg-page .page-content .plant-image-scroll { padding: 10px; gap: 10px;}
+    .bg-page .page-content .plant-scroll-img { width: 180px; height: 130px; }
+    .bg-page .page-content .plant-info-block { padding: 12px 18px; }
+    .back-link { padding: 7px 14px; font-size: 0.85rem; }
+}
